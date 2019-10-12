@@ -23,14 +23,21 @@ class InsertionSort implements SortAlgorithm {
 
             // Picking up the key(Card)
             T key = array[j];
-            int i = j - 1;
-
-            while (i >= 0 && less(key, array[i])) {
-                array[i + 1] = array[i];
-                i--;
-            }
+//            int i = j - 1;
+//
+//            while (i >= 0 && less(key, array[i])) {
+//                array[i + 1] = array[i];
+//                i--;
+//            }
             // Placing the key (Card) at its correct position in the sorted subarray
-            array[i + 1] = key;
+//            array[i + 1] = key;
+            /* =================================================================== */
+            int z = j;
+            while(z >= 1 && less(key, array[z - 1])) {
+                array[z] = array[z - 1];
+                z--;
+            }
+            array[z] = key;
         }
         return array;
     }
